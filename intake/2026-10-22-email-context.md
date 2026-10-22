@@ -68,3 +68,44 @@ Reading for the plan: this is the input model to turn into the forecasting skill
 - Chartmetric and Apollo logins.
 - Revive the Republic concept (sent on WhatsApp).
 - The Fastgate material ("stuur sommer 'n paar goed hieronder" on 21 Oct, nothing followed).
+
+## Received later on 22 Oct
+
+### "Mushroom Motion consulting agreement" (from Julien@mushroom.co.za, 11:31 SAST)
+
+"Need to streamline this as I cannot work for R20k a month but I get 20% profit share per project for something I bring in. I have a 12% shareholding." Attached: `intake/attachments/2026-04-09-mr-mushroom-advisory-agreement-v3.docx`, **unsigned**.
+
+What the agreement says (effective 9 April 2026, ref MR-MP-MM-ADV-2026-001, consultant = Music Republik (Pty) Ltd in registration / The Pop Market (Pty) Ltd, clients = Mushroom Productions and Mushroom Motion):
+
+| Term | Value |
+|---|---|
+| Mushroom Motion retainer | R20,000 a month, **capped at 12 advisory hours** a month; unused hours don't roll over (7.2) |
+| Cap notification | Consultant must notify at 10 hours and get written authorisation before exceeding 12 (5.8) |
+| Hours beyond the cap | R1,750 an hour, 15-minute increments, billed monthly in arrears |
+| New-client profit share (Mushroom Motion) | 20% of net profit per project for clients introduced after 9 April 2026; the greater of the profit share or the hourly rate applies (5.2) |
+| Big Concerts tours profit share | 20% of net profit on all Big Concerts tours and new work through the consultant's sales channel |
+| VIP ground transport facilitation (Mushroom Productions) | 6% of invoice total |
+| Emergency turnaround | R2,500 an hour |
+| Standard response | 24 business hours; emergencies 4 hours |
+| Term | Indefinite, 30 days' notice either side |
+| Exclusivity | Non-exclusive; consultant free to work across Music Republik, The Pop Market and other ventures (6.4) |
+| IP | Methodologies and templates stay the consultant's (12.2) |
+| Liability | Capped at three months' fees; client indemnifies consultant for promotion losses |
+
+Reading for the plan: the paper already protects him. The problem is that it is unsigned and the cap is not enforced: 60–70 hours a month are being worked against a 12-hour cap with no notification and no overage invoices. D3 is therefore not "write new terms" but: get v3 signed with the cap set to the number he wants (he said four hours on the call), enforce clause 5.8 from November, and invoice the overage at R1,750 an hour, including the ~R60k he mentioned.
+
+### "Mushroom Motion - Marketing plan for Nov–Jan + what we need from you" (forwarded, 11:35 SAST)
+
+From Bianca Jansen, Web Consultants (bianca@webconsultants.co.za), 21 Oct, to Julien and Willem Schoeman, cc Wim du Plessis. Two goals: push the Canon UHD box lenses to secure the remaining 23 rental days before the loan deadline (about 9 February, 120 days from 12 October), and reposition Mushroom Motion as a holistic live-event content and broadcast partner ("Cinema Looks. Broadcast Discipline."). November launch (target 2 Nov): lens landing page, Google Ads group, LinkedIn Ads with Willem's voiceover videos, four social posts, two blog posts. December: LinkedIn retargeting and lead forms, BTS content, case study. January: spend on whichever channel produces enquiries, review. They want: lens deadline and bookings confirmed, hire terms and day rate, Canon's OK on "first in Africa" claims, target geography, whether to alternate LinkedIn audiences between production/rental companies and brand-side marketing and events managers, and a lead tracker. Content still pending from Mushroom: final lens videos by 28 Oct, photos, BTS footage, job list Nov–Jan, multicam and flyaway footage, archive highlights, lens specs, testimonials and logos.
+
+Reading for the plan: the agency's LinkedIn ads already target brand-side marketing and events managers, the same people as D8. The sales agent must not duplicate that: it works the list by direct outreach, and the agency's lead tracker (their point 6) is exactly what the hallo@ automation (D2) can feed. Julien's hours on any of this should be zero; it belongs to Willem.
+
+### "Investments - other small source of income" (from julien@merchhaus.co.za, 13:36 SAST)
+
+A 30% referral agreement with the private wealth arm of Old Mutual, which has managed his parents' funds for three years. Currently **R13k a month**. His idea: approach 400–500 high-net-worth individuals to move funds there; in 5–10 years the manager could have R5bn under management and the referral could pay R80k a month.
+
+Reading for the plan: keep the agreement, it is passive income that counts toward the take-home run-rate. The HNWI campaign is not music and fails gate one; it goes in the decision log as "keep, don't build".
+
+### Gemini notes from the call (Google Meet, 13:22 SAST)
+
+Auto-generated summary with action items, saved as `intake/2026-10-22-gemini-call-notes.md`. The action list matches the plan's week-one deliverables. Items it assigns to Julien and still open: power bank supplier, Chartmetric login, concert budgeting and offer model, international artist list and the top-400 master data, hip-hop artist lists and event data for the gap analysis, Revive naming and streaming concept, copying Johannes on mail to Raphael Domalik (Fastgate).
