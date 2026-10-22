@@ -11,167 +11,149 @@
 <style>
 :root{
   --paper:#FFFFFF;--bone:#F4F4F1;--soft:#ECEAE3;--ink:#0E0E10;--ink-soft:#2A2A2D;--muted:#6F6F73;
-  --rule:#E0DED7;--rule-strong:#C8C5BB;--red:#F25C2A;--red-ink:#D94A1B;--blue:#2D55FF;--lime:#C6F03A;--night:#0A0A0C;--tint:#FFF4EF;
-  --radius:18px;--radius-sm:10px;--max:1120px;
+  --rule:#E0DED7;--rule-strong:#C8C5BB;--red:#F25C2A;--red-ink:#D94A1B;--blue:#2D55FF;--tint:#FFF4EF;
+  --radius:18px;--radius-sm:12px;--max:1040px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0A0A0C;--bone:#131315;--soft:#1B1B1E;--ink:#F4F4F1;--ink-soft:#D6D6D2;--muted:#9A9A9E;--rule:#26262A;--rule-strong:#38383D;--tint:#1F1410;--red-ink:#FF7A4D}}
 :root[data-theme="dark"]{--paper:#0A0A0C;--bone:#131315;--soft:#1B1B1E;--ink:#F4F4F1;--ink-soft:#D6D6D2;--muted:#9A9A9E;--rule:#26262A;--rule-strong:#38383D;--tint:#1F1410;--red-ink:#FF7A4D}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:"Geist",Arial,sans-serif;font-size:15.5px;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
 @media(min-width:900px){.wrap{padding:0 40px}}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
 .brand{font-family:"Caveat",cursive;font-size:24px;line-height:1;white-space:nowrap}
 .brand b{color:var(--red)}
-.links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.links{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 .links::-webkit-scrollbar{display:none}
-.links a{font-size:12px;font-weight:600;letter-spacing:.04em;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:999px;white-space:nowrap}
+.links a{font-size:12px;font-weight:600;letter-spacing:.03em;text-decoration:none;color:var(--muted);padding:6px 10px;border-radius:999px;white-space:nowrap}
 .links a span{color:var(--red);margin-right:4px}
 .links a.on,.links a:hover{background:var(--bone);color:var(--ink)}
-.pill{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:4px 10px;white-space:nowrap}
+.tools{display:flex;gap:6px;align-items:center}
+.btn{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule-strong);background:var(--paper);color:var(--ink-soft);border-radius:999px;padding:6px 11px;cursor:pointer;white-space:nowrap;font-family:inherit}
+.btn:hover{border-color:var(--ink)}
+.pill{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:5px 10px;white-space:nowrap}
 
 /* hero */
-.hero{padding:72px 0 48px;border-bottom:1px solid var(--rule)}
-.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
-h1{font-size:clamp(44px,8.5vw,112px);line-height:.95;letter-spacing:-.035em;font-weight:700;margin:0 0 28px;max-width:14ch}
+.hero{padding:60px 0 36px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 16px}
+h1{font-size:clamp(44px,8vw,104px);line-height:.95;letter-spacing:-.035em;font-weight:700;margin:0 0 22px}
 h1 em{font-style:italic;color:var(--red)}
-.lead{font-size:clamp(18px,2vw,22px);line-height:1.45;color:var(--ink-soft);max-width:58ch;margin:0 0 22px}
-.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.lead{font-size:clamp(17px,2vw,21px);line-height:1.45;color:var(--ink-soft);max-width:52ch;margin:0 0 18px}
+.meta{display:flex;flex-wrap:wrap;gap:8px}
 .chip{font-size:12.5px;color:var(--ink-soft);background:var(--bone);border:1px solid var(--rule);border-radius:999px;padding:6px 12px}
 .chip b{color:var(--ink)}
-.sig{font-family:"Caveat",cursive;font-size:30px;margin-top:28px;color:var(--ink)}
+.sig{font-family:"Caveat",cursive;font-size:28px;margin-top:22px}
 .sig small{display:block;font-family:"Geist",Arial,sans-serif;font-size:12px;color:var(--muted);margin-top:2px}
 
 /* sections */
-section{padding:64px 0 8px}
-.sh{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;margin:0 0 26px}
-.sh .n{font-size:clamp(28px,3vw,36px);color:var(--red);font-weight:700;line-height:1;padding-top:4px}
-.sh h2{font-size:clamp(28px,3.6vw,44px);line-height:1.05;letter-spacing:-.025em;margin:0 0 8px;font-weight:700}
-.sh p{margin:0;color:var(--muted);max-width:62ch;font-size:15px}
+section{padding:52px 0 4px}
+.sh{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin:0 0 18px}
+.sh .n{font-size:clamp(26px,3vw,34px);color:var(--red);font-weight:700;line-height:1;padding-top:4px}
+.sh h2{font-size:clamp(26px,3.4vw,40px);line-height:1.05;letter-spacing:-.025em;margin:0 0 6px;font-weight:700}
+.sh p{margin:0;color:var(--muted);max-width:60ch;font-size:14.5px}
 .draft{display:inline-block;background:var(--tint);color:var(--red-ink);border-radius:6px;padding:2px 8px;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;vertical-align:middle;margin-left:10px}
 
-/* stepper */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;position:relative}
-.step{border:1px solid var(--rule);border-radius:var(--radius);padding:22px 20px 20px;background:var(--paper);position:relative}
-.step .k{font-size:34px;font-weight:700;color:var(--red);line-height:1;letter-spacing:-.03em;margin-bottom:12px}
-.step b{display:block;font-size:16px;margin-bottom:6px}
-.step span{font-size:13.5px;color:var(--muted);line-height:1.45}
-.rhythm{margin-top:18px;background:var(--bone);border-left:3px solid var(--red);border-radius:0 var(--radius) var(--radius) 0;padding:18px 22px}
-.rhythm .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
-.rhythm p{margin:0;color:var(--ink-soft)}
+/* disclosure */
+details{border:1px solid var(--rule);border-radius:var(--radius-sm);background:var(--paper);margin:0 0 8px}
+details[open]{border-color:var(--rule-strong)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:13px 16px;font-size:15px;font-weight:600;line-height:1.35}
+summary::-webkit-details-marker{display:none}
+summary .r{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12.5px;font-weight:500;white-space:nowrap}
+summary .chev{width:18px;height:18px;border-radius:50%;border:1px solid var(--rule-strong);display:inline-grid;place-items:center;flex:none;transition:transform .18s}
+summary .chev::before{content:"";width:6px;height:6px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg) translate(-1px,-1px)}
+details[open] summary .chev{transform:rotate(180deg)}
+summary:hover{background:var(--bone)}
+.body{padding:12px 16px 16px;color:var(--ink-soft);font-size:14.5px;border-top:1px solid var(--rule)}
+.body p{margin:0 0 8px}
+.body p:last-child{margin-bottom:0}
+.body ul{margin:4px 0 0;padding-left:18px}
+.body li{margin:0 0 5px}
+.body li::marker{color:var(--red)}
+.body b{color:var(--ink)}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:14px;margin:0}
+.gl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:18px 0 8px;display:flex;justify-content:space-between;align-items:baseline}
+.gl span{letter-spacing:0;text-transform:none;font-weight:500;font-size:12.5px}
 
-/* scoreboard */
-.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.tile{border:1px solid var(--rule);border-radius:var(--radius);padding:20px 20px 18px;background:var(--paper);min-height:132px;display:flex;flex-direction:column;justify-content:space-between}
-.tile .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.tile .v{font-size:clamp(28px,3vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1;margin:14px 0 8px}
-.tile .v i{font-style:normal;color:var(--red)}
-.tile .s{font-size:12.5px;color:var(--muted);line-height:1.4}
-.nonneg{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.nonneg div{font-size:13.5px;color:var(--ink-soft);padding:14px 16px;border:1px dashed var(--rule-strong);border-radius:var(--radius-sm)}
-.nonneg b{display:block;color:var(--ink);margin-bottom:2px}
-
-/* gates */
-.gates{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
-.gate{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:14px 16px;font-size:14px;display:flex;gap:12px;align-items:flex-start}
-.gate b{color:var(--red);font-size:18px;line-height:1.1}
-.gate.hard{border-color:var(--red)}
-h3{font-size:17px;margin:28px 0 10px;letter-spacing:-.01em}
-h3 small{color:var(--muted);font-weight:400;font-size:13px;margin-left:8px}
-
-/* tables */
-table{width:100%;border-collapse:collapse;font-size:14px}
-th{text-align:left;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;padding:0 12px 10px 0;border-bottom:1px solid var(--rule-strong)}
-td{vertical-align:top;padding:12px 12px 12px 0;border-bottom:1px solid var(--rule)}
-td.key{font-weight:600;width:30%}
-td.why{color:var(--ink-soft)}
+/* tags */
 .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:6px;border:1px solid var(--rule-strong);color:var(--ink-soft);white-space:nowrap}
 .tag.go{background:var(--red);border-color:var(--red);color:#fff}
 .tag.data{border-color:var(--blue);color:var(--blue)}
-.tag.hold{border-color:var(--rule-strong);color:var(--muted)}
+.tag.hold{color:var(--muted)}
 .tag.no{background:var(--soft);border-color:var(--soft);color:var(--muted)}
+.own{font-size:10.5px;font-weight:700;letter-spacing:.06em;border:1px solid var(--rule-strong);border-radius:6px;padding:3px 7px;color:var(--ink-soft)}
+.own.j{border-color:var(--red);color:var(--red)}
+
+/* stepper */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:10px}
+.step{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:16px 16px 14px;background:var(--bone)}
+.step .k{font-size:26px;font-weight:700;color:var(--red);line-height:1;margin-bottom:8px}
+.step b{display:block;font-size:14.5px;margin-bottom:3px}
+.step span{font-size:12.5px;color:var(--muted);line-height:1.4}
+
+/* scoreboard */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+.tile{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:16px 16px 14px;background:var(--paper);min-height:112px;display:flex;flex-direction:column;justify-content:space-between}
+.tile .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tile .v{font-size:clamp(26px,2.8vw,34px);font-weight:700;letter-spacing:-.03em;line-height:1;margin:10px 0 6px}
+.tile .v i{font-style:normal;color:var(--red)}
+.tile .s{font-size:12px;color:var(--muted);line-height:1.35}
+
+/* gates */
+.gates{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:12px}
+.gate{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:10px 12px;font-size:13px;line-height:1.3;background:var(--bone)}
+.gate b{display:block;color:var(--red);font-size:16px;margin-bottom:2px}
+.gate.hard{border-color:var(--red)}
 
 /* focus */
-.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.fcard{border:1px solid var(--rule);border-radius:var(--radius);padding:24px 24px 20px;background:var(--paper);display:flex;flex-direction:column}
-.fcard.a{border-color:var(--red)}
-.fcard .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:10px}
-.fcard h4{margin:0 0 8px;font-size:21px;letter-spacing:-.02em;line-height:1.15}
-.fcard p{margin:0 0 10px;font-size:14px;color:var(--ink-soft)}
-.fcard .m{font-size:13px;color:var(--muted);margin-top:auto;padding-top:10px;border-top:1px solid var(--rule)}
-.bar{height:6px;background:var(--soft);border-radius:999px;overflow:hidden;margin:12px 0 6px}
+.focus{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.fcard{border:1px solid var(--red);border-radius:var(--radius-sm);padding:16px 16px 14px;background:var(--paper)}
+.fcard .k{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:6px}
+.fcard h4{margin:0 0 4px;font-size:19px;letter-spacing:-.02em;line-height:1.15}
+.fcard p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+.bar{height:6px;background:var(--soft);border-radius:999px;overflow:hidden;margin:10px 0 4px}
 .bar i{display:block;height:100%;background:var(--red);border-radius:999px}
 .bar+.s{font-size:12px;color:var(--muted)}
-.contain{margin-top:12px;border:1px solid var(--rule);border-radius:var(--radius);padding:20px 24px;background:var(--bone);display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.contain h4{margin:0 0 6px;font-size:15px}
-.contain p{margin:0;font-size:13.5px;color:var(--ink-soft)}
 
-/* allocation */
-.alloc{display:grid;grid-template-columns:1.1fr 1fr;gap:28px}
-.hours{list-style:none;margin:0;padding:0}
-.hours li{display:grid;grid-template-columns:1fr 60px;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--rule);font-size:14px}
-.hours li .bar{margin:6px 0 0}
+/* hours */
+.hours{list-style:none;margin:0 0 10px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+.hours li{display:grid;grid-template-columns:1fr 44px;gap:10px;align-items:center;padding:6px 0;border-bottom:1px solid var(--rule);font-size:13.5px}
+.hours li .bar{margin:5px 0 0}
 .hours li b{text-align:right;font-variant-numeric:tabular-nums}
-.months td.key{width:28%}
 
 /* deliverables */
-.phase{margin:26px 0 10px;display:flex;align-items:baseline;gap:12px}
-.phase h3{margin:0}
-.phase span{font-size:12.5px;color:var(--muted)}
-.dl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.d{display:grid;grid-template-columns:56px 1fr 150px;gap:16px;border:1px solid var(--rule);border-radius:var(--radius-sm);padding:16px 18px;background:var(--paper)}
-.d .id{font-weight:700;color:var(--red);font-size:15px}
-.d .t{font-size:14.5px;color:var(--ink)}
-.d .t b{display:block;margin-bottom:4px}
-.d .t small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
-.d .r{font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:6px;align-items:flex-start}
-.own{font-size:11px;font-weight:700;letter-spacing:.06em;border:1px solid var(--rule-strong);border-radius:6px;padding:3px 7px;color:var(--ink-soft)}
-.own.j{border-color:var(--red);color:var(--red)}
-.metric{font-size:12px;color:var(--muted)}
+.d summary{grid-template-columns:52px 1fr auto}
+.d summary .id{color:var(--red);font-weight:700}
+.d summary .t{font-weight:600}
+.d summary .t small{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:1px}
 
-/* dashboard mock */
-.dash{display:grid;grid-template-columns:2fr 1fr;gap:12px}
-.panel{border:1px solid var(--rule);border-radius:var(--radius);padding:18px 20px;background:var(--bone)}
-.panel .l{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
-.panel ul{margin:0;padding-left:18px;font-size:14px}
-.panel li{margin:0 0 6px}
-.panel li::marker{color:var(--red)}
-.build{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.build div{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:14px 16px;font-size:13.5px}
-.build b{display:block;color:var(--red);margin-bottom:4px}
+/* dashboard */
+.build{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px}
+.build div{border:1px solid var(--rule);border-radius:var(--radius-sm);padding:12px 14px;font-size:13.5px;background:var(--bone)}
+.build b{display:block;color:var(--red);margin-bottom:3px}
 
-/* questions */
-.qs{list-style:none;margin:0;padding:0;counter-reset:q}
-.qs li{counter-increment:q;display:grid;grid-template-columns:40px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px}
-.qs li::before{content:counter(q,decimal-leading-zero);color:var(--red);font-weight:700}
-
-footer{margin-top:72px;border-top:1px solid var(--rule);padding:22px 0 40px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer{margin-top:56px;border-top:1px solid var(--rule);padding:20px 0 40px;font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media(max-width:900px){
   .steps{grid-template-columns:repeat(2,1fr)}
   .tiles{grid-template-columns:repeat(2,1fr)}
-  .nonneg,.gates,.focus,.build{grid-template-columns:1fr}
-  .alloc,.contain,.dash{grid-template-columns:1fr}
-  .d{grid-template-columns:44px 1fr}
-  .d .r{grid-column:2;flex-direction:row;flex-wrap:wrap}
-  table.stack thead{display:none}
-  table.stack tr{display:block;padding:12px 0;border-bottom:1px solid var(--rule)}
-  table.stack td{display:block;border:0;padding:3px 0}
-  table.stack td.key{width:auto}
+  .gates{grid-template-columns:repeat(3,1fr)}
+  .focus,.build,.hours{grid-template-columns:1fr}
+  .kv{grid-template-columns:1fr}
+  summary .r{flex-wrap:wrap;white-space:normal;justify-content:flex-end}
+  .d summary{grid-template-columns:44px 1fr}
+  .d summary .r{grid-column:2;justify-content:flex-start}
+  .tools .btn{display:none}
 }
-@media(max-width:540px){.steps,.tiles{grid-template-columns:1fr}.pill{display:none}}
+@media(max-width:540px){.steps,.tiles{grid-template-columns:1fr}.gates{grid-template-columns:repeat(2,1fr)}.pill{display:none}}
 @media print{
-  .nav{position:static;backdrop-filter:none}
-  .links{display:none}
-  section{padding:28px 0 0;break-inside:auto}
-  .tile,.step,.fcard,.d,.panel,tr{break-inside:avoid}
-  .hero{padding:24px 0}
-  h1{font-size:54px}
+  .nav{position:static;backdrop-filter:none}.links,.tools{display:none}
+  details{break-inside:avoid}summary .chev{display:none}
+  section{padding:24px 0 0}.hero{padding:20px 0}h1{font-size:48px}
   @page{size:A4;margin:14mm}
 }
 </style>
@@ -183,17 +165,17 @@ footer{margin-top:72px;border-top:1px solid var(--rule);padding:22px 0 40px;font
   <div class="links">
     <a href="#how"><span>00</span>How</a><a href="#life"><span>01</span>Life</a><a href="#filter"><span>02</span>Filter</a><a href="#focus"><span>03</span>Focus</a><a href="#alloc"><span>04</span>Resources</a><a href="#deliver"><span>05</span>Deliverables</a><a href="#dash"><span>06</span>Dashboard</a>
   </div>
-  <div class="pill">Draft v0.1</div>
+  <div class="tools"><button class="btn" id="toggleAll" type="button">Expand all</button><span class="pill">Draft v0.1</span></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <p class="eyebrow">Co-founder seat · Music Republik · Private</p>
   <h1>Julien.<br><em>The plan.</em></h1>
-  <p class="lead">Five layers, each one feeding the next, each one a panel on the dashboard. The life design sets the score. The filter turns it into yes or no. Focus picks the lines that get his hours. Allocation gives them hours, cash and people. Deliverables are dated and owned, and every one emits a number.</p>
+  <p class="lead">One scoreboard, one filter, three focus lines, seventeen dated deliverables. Open any row for the detail.</p>
   <div class="meta">
     <span class="chip">Built <b>22 Oct 2026</b></span>
     <span class="chip">First 90 days <b>1 Nov – 31 Jan</b></span>
-    <span class="chip">From the life design, the 2h18 intake call, the emails, the agreement and the spreadsheets</span>
+    <span class="chip">Weekly call <b>Tuesday 11:00</b></span>
     <span class="chip">Goal <b>momentum</b></span>
   </div>
   <div class="sig">Johannes le Roux.<small>Fractional co-founder · 10 hours a month</small></div>
@@ -202,184 +184,127 @@ footer{margin-top:72px;border-top:1px solid var(--rule);padding:22px 0 40px;font
 <main>
 
 <section id="how"><div class="wrap">
-  <div class="sh"><div class="n">00</div><div><h2>How the plan works</h2><p>Four months of offers to international acts produced nothing. This swaps that for things Julien controls, and makes every week measurable.</p></div></div>
+  <div class="sh"><div class="n">00</div><div><h2>How the plan works</h2><p>Five layers. Each one feeds the next, and each one is a panel on the dashboard.</p></div></div>
   <div class="steps">
-    <div class="step"><div class="k">1</div><b>Life design</b><span>The scoreboard. Targets, limits, non-negotiables. Nothing else moves unless it moves these.</span></div>
-    <div class="step"><div class="k">2</div><b>Decision filter</b><span>Six gates and a decision log. Nothing gets argued twice.</span></div>
-    <div class="step"><div class="k">3</div><b>Focus</b><span>Three lines get his hours this quarter. The rest: automate, hold or park.</span></div>
-    <div class="step"><div class="k">4</div><b>Resources</b><span>Hours, cash and people per line, per 90 days.</span></div>
-    <div class="step"><div class="k">5</div><b>Deliverables</b><span>Dated, owned, a done-definition, and a number for the dashboard.</span></div>
+    <div class="step"><div class="k">1</div><b>Life design</b><span>The scoreboard</span></div>
+    <div class="step"><div class="k">2</div><b>Decision filter</b><span>Six gates, one log</span></div>
+    <div class="step"><div class="k">3</div><b>Focus</b><span>Three lines get the hours</span></div>
+    <div class="step"><div class="k">4</div><b>Resources</b><span>Hours, cash, people</span></div>
+    <div class="step"><div class="k">5</div><b>Deliverables</b><span>Dated, owned, measured</span></div>
   </div>
-  <div class="rhythm"><div class="l">The rhythm</div><p>Tuesday 11:00 weekly call, Julien's proposed slot. Numbers update before the call. On the call: what moved, what's stuck, decisions logged, next week's list. Every 90 days: review against the life design, re-cut focus and allocation, bump the version.</p></div>
+  <details><summary>The weekly rhythm<span class="r">Tuesday 11:00 <i class="chev"></i></span></summary><div class="body"><ul><li>Numbers update before the call.</li><li>On the call: what moved, what's stuck, decisions logged, next week's list.</li><li>Every 90 days: review against the life design, re-cut focus and allocation, bump the version.</li></ul></div></details>
+  <details><summary>Why momentum is the goal<span class="r"><i class="chev"></i></span></summary><div class="body"><p>Four months of offers to international acts produced nothing. The plan swaps that for things Julien controls, and makes every week measurable.</p></div></details>
 </div></section>
 
 <section id="life"><div class="wrap">
-  <div class="sh"><div class="n">01</div><div><h2>Life design, the scoreboard</h2><p>Revised on the call. R4m was "a little bit unrealistic". His previous package came to about R1.6m a year out, and that is the 12-month target, with R2m as the stretch.</p></div></div>
+  <div class="sh"><div class="n">01</div><div><h2>Life design, the scoreboard</h2><p>Everything below is measured against these eight tiles.</p></div></div>
   <div class="tiles">
     <div class="tile"><div class="l">Take-home run-rate</div><div class="v">R1.6m</div><div class="s">12 months · stretch R2m · R4m at four years</div></div>
-    <div class="tile"><div class="l">Floor</div><div class="v">R1m</div><div class="s">Below this the plan has failed and we change course</div></div>
-    <div class="tile"><div class="l">Hours a week</div><div class="v">50 <i>→ 40</i></div><div class="s">45 by April · off-switch at 20:30</div></div>
-    <div class="tile"><div class="l">Away test</div><div class="v">2 weeks</div><div class="s">With the family, nothing stalls · 20–24 days a year</div></div>
-    <div class="tile"><div class="l">Capital at risk</div><div class="v">≤ R1.5m</div><div class="s">Per event · annual ceiling still to agree</div></div>
-    <div class="tile"><div class="l">Cash</div><div class="v">R1.8m</div><div class="s">R5.6m invested, untouched · about R1m to J. Cole in November</div></div>
-    <div class="tile"><div class="l">Perimeter</div><div class="v">Music</div><div class="s">Only. Complementary to Big Concerts, never competing.</div></div>
-    <div class="tile"><div class="l">Purpose</div><div class="v">Build local</div><div class="s">Artists and his own platforms, not imports</div></div>
+    <div class="tile"><div class="l">Floor</div><div class="v">R1m</div><div class="s">Below this we change course</div></div>
+    <div class="tile"><div class="l">Hours a week</div><div class="v">50 <i>→ 40</i></div><div class="s">45 by April · off-switch 20:30</div></div>
+    <div class="tile"><div class="l">Away test</div><div class="v">2 weeks</div><div class="s">Family trip, nothing stalls · 20–24 days a year</div></div>
+    <div class="tile"><div class="l">Capital at risk</div><div class="v">≤ R1.5m</div><div class="s">Per event · annual ceiling to agree</div></div>
+    <div class="tile"><div class="l">Cash</div><div class="v">R1.8m</div><div class="s">R5.6m invested, untouched</div></div>
+    <div class="tile"><div class="l">Perimeter</div><div class="v">Music</div><div class="s">Only. Complementary to Big Concerts.</div></div>
+    <div class="tile"><div class="l">Purpose</div><div class="v">Build local</div><div class="s">Artists and own platforms, not imports</div></div>
   </div>
-  <div class="nonneg">
-    <div><b>The trust</b>The family trust and holdco never touch a deal. No sureties, nothing from co-shareholders.</div>
-    <div><b>Family</b>His father; Justin is CEO and chairman at Big Concerts. The in-house merch position at their new 12,000-cap dome is a prize to protect.</div>
-    <div><b>Order</b>Health, family, wealth. "If I just did absolutely nothing I could do nothing for two years, but my mind is crazy."</div>
-  </div>
+  <details><summary>Where the numbers come from<span class="r"><i class="chev"></i></span></summary><div class="body"><p>R4m was "a little bit unrealistic". The previous package came to about R1.6m a year out: R125k pre-tax salary plus medical, phone and internet, plus R60–70k a month from merch and the camera stake. R1.6m is the 12-month target, R2m the stretch, R4m at four years. Even R100–120k a month "and I'd be like, fantastic."</p></div></details>
+  <details><summary>Non-negotiables<span class="r">3 <i class="chev"></i></span></summary><div class="body"><ul><li><b>The trust.</b> The family trust and holdco never touch a deal. No sureties, nothing from co-shareholders.</li><li><b>Family.</b> Never compete with Big Concerts. The in-house merch position at their new 12,000-cap dome is a prize to protect.</li><li><b>Order.</b> Health, family, wealth.</li></ul></div></details>
+  <details><summary>Cash position<span class="r">22 Oct <i class="chev"></i></span></summary><div class="body"><div class="kv"><b>Investments</b><span>R5.6m at 8–9% a year, untouched</span><b>Cash</b><span>R1.8m</span><b>Salary</b><span>None for four months; everything stays in the businesses</span><b>Trust distribution</b><span>About R1m a year possible, not counted on</span><b>Near-term need</b><span>About R1m for J. Cole production in November, back on 12 December</span></div></div></details>
 </div></section>
 
 <section id="filter"><div class="wrap">
-  <div class="sh"><div class="n">02</div><div><h2>Decision filter<span class="draft">draft</span></h2><p>An opportunity needs at least four of six. Gate four is never waived.</p></div></div>
+  <div class="sh"><div class="n">02</div><div><h2>Decision filter<span class="draft">draft</span></h2><p>Four of six gates to pass. Gate four is never waived.</p></div></div>
   <div class="gates">
-    <div class="gate"><b>1</b><span>Is it music?</span></div>
-    <div class="gate"><b>2</b><span>Does it build the local scene, a local artist, or a platform he owns?</span></div>
-    <div class="gate"><b>3</b><span>Is he uniquely positioned: SA live experience, the Big Concerts network, his data?</span></div>
-    <div class="gate hard"><b>4</b><span>Capital inside the R1.5m ceiling, nothing near the trust, no surety.</span></div>
-    <div class="gate"><b>5</b><span>After setup, does it run without him?</span></div>
-    <div class="gate"><b>6</b><span>Complementary to Big Concerts?</span></div>
+    <div class="gate"><b>1</b>Is it music?</div>
+    <div class="gate"><b>2</b>Builds local artists or his own platform?</div>
+    <div class="gate"><b>3</b>Is he uniquely positioned?</div>
+    <div class="gate hard"><b>4</b>Inside R1.5m, nothing near the trust</div>
+    <div class="gate"><b>5</b>Runs without him after setup?</div>
+    <div class="gate"><b>6</b>Complementary to Big Concerts?</div>
   </div>
-  <h3>Decision log<small>seeded from the call</small></h3>
-  <table class="stack">
-    <thead><tr><th>Opportunity</th><th>Call</th><th>Why</th></tr></thead>
-    <tbody>
-    <tr><td class="key">Revive the Republic: own-platform nights, Johannesburg</td><td><span class="tag go">Go · focus</span></td><td class="why">Passes all six. Low capital, high purpose, builds the brand and the fan base, feeds ticketing, merch and streaming.</td></tr>
-    <tr><td class="key">Fastgate ticketing</td><td><span class="tag go">Go · the rail</span></td><td class="why">WhatsApp-native, promoter-friendly, fan database. For his own events first. Not a software company this quarter. Pre-sales are never the risk budget.</td></tr>
-    <tr><td class="key">Local-artist merch platform</td><td><span class="tag go">Build</span></td><td class="why">Chartmetric shows acts with hundreds of millions of views and no merch. Automated from day one. Starts after J. Cole.</td></tr>
-    <tr><td class="key">Big Concerts in-house merch at the new dome venue</td><td><span class="tag go">Protect</span></td><td class="why">The venue takes about 30% of merch gross on every promoter's show. Worth more than any single international act.</td></tr>
-    <tr><td class="key">Add-on products at shows: power banks, earplugs, posters, vinyl bundles</td><td><span class="tag">Yes</span></td><td class="why">100% margin, no artist share. Test at J. Cole.</td></tr>
-    <tr><td class="key">International act offers: James Arthur 2027, Daughtry, Chris Tomlin 2028; Cat Stevens declined at $350k</td><td><span class="tag data">Data only</span></td><td class="why">$300–350k for two shows breaks gate four even at 50/50. Open offers stay open passively. An agent sends offers to build the price database. A deal proceeds only when the model shows profit inside the ceiling with a co-promoter.</td></tr>
-    <tr><td class="key">Mushroom Motion retainer: R20k plus 20% profit share, 12% stake</td><td><span class="tag data">Enforce and sign</span></td><td class="why">The unsigned v3 agreement already caps the retainer at 12 hours, with R1,750 an hour beyond it and 20% of net profit on clients he brings. Actual hours are 60–70. Sign it with the cap at four hours, enforce the notification clause from November, invoice the overage. Exit the retainer if they refuse.</td></tr>
-    <tr><td class="key">Old Mutual private wealth referral: 30% of the fee, R13k a month</td><td><span class="tag hold">Keep, don't build</span></td><td class="why">Passive income that counts toward the run-rate. The 400–500 high-net-worth campaign is not music and fails gate one.</td></tr>
-    <tr><td class="key">Artist agency and booking system: sign 10–30 local acts at 25%</td><td><span class="tag hold">Hold</span></td><td class="why">Right idea. Needs the platform and the first show first.</td></tr>
-    <tr><td class="key">Tarly, fan-request-an-artist platform</td><td><span class="tag hold">Hold</span></td><td class="why">Music and local, but not his platform. Revisit after Revive #1.</td></tr>
-    <tr><td class="key">Corporate apparel at Merchhaus</td><td><span class="tag no">Park</span></td><td class="why">Commodity, wins on price, "a pain." Off the website.</td></tr>
-    <tr><td class="key">Merch Showroom sub-licensing, WWE and the like</td><td><span class="tag no">Park</span></td><td class="why">Needs a retail licence and capital. "2028."</td></tr>
-    <tr><td class="key">Sixes cricket/golf festival investment</td><td><span class="tag no">No</span></td><td class="why">Not music. He declined it himself: "sport is not me."</td></tr>
-    <tr><td class="key">Boxing or any sport event</td><td><span class="tag no">No</span></td><td class="why">Outside the perimeter.</td></tr>
-    </tbody>
-  </table>
+  <div class="gl">Decision log <span>seeded from the call · open a row for the why</span></div>
+  <details><summary>Revive the Republic: own-platform nights, Johannesburg<span class="r"><span class="tag go">Go · focus</span><i class="chev"></i></span></summary><div class="body"><p>Passes all six. Low capital, high purpose, builds the brand and the fan base, feeds ticketing, merch and streaming.</p></div></details>
+  <details><summary>Fastgate ticketing<span class="r"><span class="tag go">Go · the rail</span><i class="chev"></i></span></summary><div class="body"><p>WhatsApp-native, promoter-friendly, fan database. For his own events first. Not a software company this quarter. Pre-sales are never the risk budget.</p></div></details>
+  <details><summary>Local-artist merch platform<span class="r"><span class="tag go">Build</span><i class="chev"></i></span></summary><div class="body"><p>Chartmetric shows acts with hundreds of millions of views and no merch. Automated from day one. Starts after J. Cole.</p></div></details>
+  <details><summary>Big Concerts in-house merch at the new dome venue<span class="r"><span class="tag go">Protect</span><i class="chev"></i></span></summary><div class="body"><p>The venue takes about 30% of merch gross on every promoter's show. Worth more than any single international act.</p></div></details>
+  <details><summary>Add-on products at shows<span class="r"><span class="tag">Yes</span><i class="chev"></i></span></summary><div class="body"><p>Power banks, earplugs, posters, vinyl bundles. 100% margin, no artist share. Test at J. Cole.</p></div></details>
+  <details><summary>International act offers<span class="r"><span class="tag data">Data only</span><i class="chev"></i></span></summary><div class="body"><p>James Arthur 2027, Daughtry, Chris Tomlin 2028; Cat Stevens declined at $350k. $300–350k for two shows breaks gate four even at 50/50. Open offers stay open passively. An agent sends offers to build the price database. A deal proceeds only when the model shows profit inside the ceiling with a co-promoter.</p></div></details>
+  <details><summary>Mushroom Motion retainer<span class="r"><span class="tag data">Enforce and sign</span><i class="chev"></i></span></summary><div class="body"><p>R20k a month plus 20% profit share, 12% stake. The unsigned v3 agreement already caps the retainer at 12 hours, with R1,750 an hour beyond it and 20% of net profit on clients he brings. Actual hours are 60–70. Sign it with the cap at four hours, enforce the notification clause from November, invoice the overage. Exit the retainer if they refuse.</p></div></details>
+  <details><summary>Old Mutual private wealth referral<span class="r"><span class="tag hold">Keep, don't build</span><i class="chev"></i></span></summary><div class="body"><p>30% of the fee, R13k a month. Passive income that counts toward the run-rate. The 400–500 high-net-worth campaign is not music and fails gate one.</p></div></details>
+  <details><summary>Artist agency and booking system<span class="r"><span class="tag hold">Hold</span><i class="chev"></i></span></summary><div class="body"><p>Sign 10–30 local acts at 25%. Right idea. Needs the platform and the first show first.</p></div></details>
+  <details><summary>Tarly, fan-request-an-artist platform<span class="r"><span class="tag hold">Hold</span><i class="chev"></i></span></summary><div class="body"><p>Music and local, but not his platform. Revisit after Revive #1.</p></div></details>
+  <details><summary>Corporate apparel at Merchhaus<span class="r"><span class="tag no">Park</span><i class="chev"></i></span></summary><div class="body"><p>Commodity, wins on price, "a pain." Off the website.</p></div></details>
+  <details><summary>Merch Showroom sub-licensing<span class="r"><span class="tag no">Park</span><i class="chev"></i></span></summary><div class="body"><p>WWE and the like. Needs a retail licence and capital. "2028."</p></div></details>
+  <details><summary>Sixes cricket/golf festival, boxing, any sport<span class="r"><span class="tag no">No</span><i class="chev"></i></span></summary><div class="body"><p>Not music. "Sport is not me. I'm Music Republik."</p></div></details>
 </div></section>
 
 <section id="focus"><div class="wrap">
   <div class="sh"><div class="n">03</div><div><h2>Focus, 1 November to 31 January</h2><p>Three lines get Julien's hours. Everything else is automated, contained or parked.</p></div></div>
   <div class="focus">
-    <div class="fcard a"><div class="k">A · Focus</div><h4>Revive the Republic</h4><p>Own-platform nights in Johannesburg: Friday hip-hop, Saturday amapiano and afro house. A 1,000–2,000 cap club, every second month moving to monthly. Streamed via Mushroom as "Mushroom Live" and sold to brands as media. Bar, merch, own tickets.</p><div class="bar"><i style="width:30%"></i></div><div class="s">15 of 50 hours a week</div><div class="m">Partner: the young hip-hop producer. Johannes's steer: about half of Julien's time. First show 500 people, then 1,000.</div></div>
-    <div class="fcard a"><div class="k">B · Focus</div><h4>Merchhaus event merch</h4><p>J. Cole on 12 December with the two youngsters running operations and the settlement done by a skill, not by Julien. Then the local-artist merch platform MVP.</p><div class="bar"><i style="width:30%"></i></div><div class="s">15 of 50 hours a week, December-heavy</div><div class="m">Dave tour actuals: R790k gross, R181k profit, Merchhaus take about R140k (30% share plus manufacturing margin). That is the number per tour, not gross.</div></div>
-    <div class="fcard a"><div class="k">C · Focus</div><h4>Fastgate v1</h4><p>Enough ticketing to run Revive #1 on WhatsApp and capture every fan who buys. Nothing more this quarter.</p><div class="bar"><i style="width:10%"></i></div><div class="s">5 of 50 hours a week</div><div class="m">Rafael and the developer build. Julien scopes and manages the partner.</div></div>
+    <div class="fcard"><div class="k">A · Focus</div><h4>Revive the Republic</h4><p>Own-platform nights in Johannesburg. Streamed, sponsored, own tickets.</p><div class="bar"><i style="width:30%"></i></div><div class="s">15 of 50 hours a week</div></div>
+    <div class="fcard"><div class="k">B · Focus</div><h4>Merchhaus event merch</h4><p>J. Cole on 12 December, then the local-artist merch platform.</p><div class="bar"><i style="width:30%"></i></div><div class="s">15 of 50 hours a week</div></div>
+    <div class="fcard"><div class="k">C · Focus</div><h4>Fastgate v1</h4><p>Enough ticketing to run Revive #1 on WhatsApp.</p><div class="bar"><i style="width:10%"></i></div><div class="s">5 of 50 hours a week</div></div>
   </div>
-  <div class="contain">
-    <div><h4>Contain and automate</h4><p>Mushroom at four hours a month with hallo@ automated and a sales agent running. International offers through an agent, data only. Consultancy and brand activations taken as they come; two brand activations a year is R3m in his words, but it is inbound.</p></div>
-    <div><h4>Parked</h4><p>Corporate apparel, Tarly, Merch Showroom, anything outside music. Each one has a line in the decision log so it never comes back as a fresh idea.</p></div>
-  </div>
+  <details><summary>A · Revive the Republic, in full<span class="r"><i class="chev"></i></span></summary><div class="body"><ul><li>Friday hip-hop night, Saturday amapiano and afro house. A 1,000–2,000 cap club in Johannesburg, every second month moving to monthly.</li><li>Streamed via Mushroom as "Mushroom Live", sold to brands as media. Bar, merch, own tickets.</li><li>Partner: the young hip-hop producer. Johannes's steer: about half of Julien's time. First show 500 people, then 1,000.</li></ul></div></details>
+  <details><summary>B · Merchhaus event merch, in full<span class="r"><i class="chev"></i></span></summary><div class="body"><ul><li>J. Cole on 12 December with the two youngsters running operations and the settlement done by a skill, not by Julien.</li><li>Then the local-artist merch platform MVP.</li><li>Dave tour actuals: R790k gross, R181k profit, Merchhaus take about R140k (30% share plus manufacturing margin). That is the number per tour, not gross.</li></ul></div></details>
+  <details><summary>C · Fastgate v1, in full<span class="r"><i class="chev"></i></span></summary><div class="body"><ul><li>WhatsApp purchase and delivery, opt-in fan database, event #1 only. Nothing more this quarter.</li><li>Rafael and the developer build. Julien scopes and manages the partner.</li></ul></div></details>
+  <details><summary>Contained and parked<span class="r"><i class="chev"></i></span></summary><div class="body"><ul><li><b>Contained.</b> Mushroom at four hours a month, hallo@ automated, sales agent running. International offers through an agent, data only. Consultancy and brand activations taken as they come.</li><li><b>Parked.</b> Corporate apparel, Tarly, Merch Showroom, anything outside music. Each one has a line in the decision log so it never comes back as a fresh idea.</li></ul></div></details>
 </div></section>
 
 <section id="alloc"><div class="wrap">
-  <div class="sh"><div class="n">04</div><div><h2>Resource allocation<span class="draft">draft</span></h2><p>Julien's week against 50 hours, to be checked against the two-week time audit on the first call. Johannes's ten hours a month, by month. Cash with a ring-fence and a cap.</p></div></div>
-  <div class="alloc">
-    <div>
-      <h3 style="margin-top:0">Julien's week</h3>
-      <ul class="hours">
-        <li><div>Revive the Republic<div class="bar"><i style="width:30%"></i></div></div><b>15</b></li>
-        <li><div>Merchhaus: J. Cole and the platform<div class="bar"><i style="width:30%"></i></div></div><b>15</b></li>
-        <li><div>Fastgate<div class="bar"><i style="width:10%"></i></div></div><b>5</b></li>
-        <li><div>Music Republik inbound<div class="bar"><i style="width:10%"></i></div></div><b>5</b></li>
-        <li><div>Admin, moving to automation<div class="bar"><i style="width:8%"></i></div></div><b>4 → 1</b></li>
-        <li><div>Mushroom Motion<div class="bar"><i style="width:2%"></i></div></div><b>1</b></li>
-        <li><div>Buffer<div class="bar"><i style="width:10%;background:var(--rule-strong)"></i></div></div><b>5</b></li>
-      </ul>
-      <h3>Johannes's ten hours a month</h3>
-      <table class="months"><tbody>
-        <tr><td class="key">November</td><td>Composio on his machine, hallo@ automation, Mushroom terms, project database, dashboard v0 (6h). Revive concept and sponsor pack (2h). Calls (2h).</td></tr>
-        <tr><td class="key">December</td><td>Merch skills, J. Cole P&amp;L, outreach agents (6h). Fastgate scope review (2h). Calls (2h).</td></tr>
-        <tr><td class="key">January</td><td>Revive #1 support, hit-list model, 90-day review and v0.2 (8h). Calls (2h).</td></tr>
-      </tbody></table>
-    </div>
-    <div>
-      <h3 style="margin-top:0">Cash</h3>
-      <table><tbody>
-        <tr><td class="key">J. Cole production</td><td>About R1,000,000. Out in November, back from 12 December. Cost R500–600k.</td></tr>
-        <tr><td class="key">Revive #1</td><td>≤ R150,000, draft cap. Venue, production, line-up, marketing. Streaming at Mushroom cost.</td></tr>
-        <tr><td class="key">Fastgate</td><td>To confirm: what is in, what is owed, who owns the IP.</td></tr>
-        <tr><td class="key">Untouched buffer</td><td>≥ R500,000 of the R1.8m.</td></tr>
-        <tr><td class="key">Investments</td><td>R5.6m. Never.</td></tr>
-      </tbody></table>
-      <h3>People</h3>
-      <table><tbody>
-        <tr><td class="key">The two youngsters</td><td>Merchhaus operations, forecasts, ordering, settlements, with the skills.</td></tr>
-        <tr><td class="key">Hip-hop partner</td><td>Revive line-up and the scene.</td></tr>
-        <tr><td class="key">Rafael and the developer</td><td>Fastgate build.</td></tr>
-        <tr><td class="key">Willem and the Mushroom team</td><td>Production and streaming.</td></tr>
-        <tr><td class="key">Gareth Wilson, Virgin Music</td><td>Intro for the first 20 local acts, when Julien says yes.</td></tr>
-        <tr><td class="key">Johannes</td><td>Builds the automation, the agents, the skills and the dashboard. Holds the list.</td></tr>
-      </tbody></table>
-    </div>
-  </div>
+  <div class="sh"><div class="n">04</div><div><h2>Resource allocation<span class="draft">draft</span></h2><p>Julien's week against 50 hours. To be checked against the two-week time audit on the first call.</p></div></div>
+  <ul class="hours">
+    <li><div>Revive the Republic<div class="bar"><i style="width:30%"></i></div></div><b>15</b></li>
+    <li><div>Merchhaus<div class="bar"><i style="width:30%"></i></div></div><b>15</b></li>
+    <li><div>Fastgate<div class="bar"><i style="width:10%"></i></div></div><b>5</b></li>
+    <li><div>Music Republik inbound<div class="bar"><i style="width:10%"></i></div></div><b>5</b></li>
+    <li><div>Admin, moving to automation<div class="bar"><i style="width:8%"></i></div></div><b>4→1</b></li>
+    <li><div>Mushroom Motion<div class="bar"><i style="width:2%"></i></div></div><b>1</b></li>
+    <li><div>Buffer<div class="bar"><i style="width:10%;background:var(--rule-strong)"></i></div></div><b>5</b></li>
+  </ul>
+  <details><summary>Cash<span class="r">R1.8m <i class="chev"></i></span></summary><div class="body"><div class="kv"><b>J. Cole production</b><span>About R1,000,000. Out in November, back from 12 December. Cost R500–600k.</span><b>Revive #1</b><span>≤ R150,000, draft cap. Venue, production, line-up, marketing. Streaming at Mushroom cost.</span><b>Fastgate</b><span>To confirm: what is in, what is owed, who owns the IP.</span><b>Untouched buffer</b><span>≥ R500,000</span><b>Investments</b><span>R5.6m. Never.</span></div></div></details>
+  <details><summary>Johannes's ten hours a month<span class="r"><i class="chev"></i></span></summary><div class="body"><div class="kv"><b>November</b><span>Composio on Julien's machine, hallo@ automation, Mushroom agreement, project database, dashboard v0 (6h). Revive concept and sponsor pack (2h). Calls (2h).</span><b>December</b><span>Merch skills, J. Cole P&amp;L, outreach agents (6h). Fastgate scope review (2h). Calls (2h).</span><b>January</b><span>Revive #1 support, hit-list model, 90-day review and v0.2 (8h). Calls (2h).</span></div></div></details>
+  <details><summary>People<span class="r">6 <i class="chev"></i></span></summary><div class="body"><div class="kv"><b>The two youngsters</b><span>Merchhaus operations, forecasts, ordering, settlements, with the skills.</span><b>Hip-hop partner</b><span>Revive line-up and the scene.</span><b>Rafael and the developer</b><span>Fastgate build.</span><b>Willem and the Mushroom team</b><span>Production and streaming.</span><b>Gareth Wilson, Virgin Music</b><span>Intro for the first 20 local acts, when Julien says yes.</span><b>Johannes</b><span>Builds the automation, the agents, the skills and the dashboard. Holds the list.</span></div></div></details>
 </div></section>
 
 <section id="deliver"><div class="wrap">
-  <div class="sh"><div class="n">05</div><div><h2>Deliverables</h2><p>Seventeen, in three phases. Each has an owner, a done-definition and the dashboard number it feeds. J is Johannes, JvW is Julien.</p></div></div>
+  <div class="sh"><div class="n">05</div><div><h2>Deliverables</h2><p>Seventeen, in three phases. J is Johannes, JvW is Julien. Open a row for what it is and when it's done.</p></div></div>
 
-  <div class="phase"><h3>Week one</h3><span>27 October – 2 November</span></div>
-  <ul class="dl">
-    <li class="d"><div class="id">D1</div><div class="t"><b>Seat live</b>November invoice, Tuesday 11:00 in both diaries, Composio on his machine with all seven inboxes into one daily triage.<small>Done when the first triage lands on a Monday morning.</small></div><div class="r"><span class="own j">J</span><span class="metric">Inbox hours a day</span></div></li>
-    <li class="d"><div class="id">D2</div><div class="t"><b>hallo@ Mushroom automated</b>Trained on the last months of mail, auto-replies to the recurring types, forwards only clients and unknowns.<small>Done when under five hallo@ mails a week reach him.</small></div><div class="r"><span class="own j">J</span><span class="metric">Mails reaching Julien</span></div></li>
-    <li class="d"><div class="id">D3</div><div class="t"><b>Mushroom agreement signed</b>Version 3 with the retainer cap set to four hours, the notification clause enforced from November, and the overage invoiced at R1,750 an hour, including the ~R60k outstanding.<small>Done when Willem has signed and the invoice is out.</small></div><div class="r"><span class="own j">J</span><span class="own">JvW</span><span class="metric">Mushroom hours a month</span></div></li>
-    <li class="d"><div class="id">D4</div><div class="t"><b>Project base</b>The repo plus everything he has shared, and the Big Concerts email archive on his laptop indexed into one database.<small>Done when it answers "what did we offer X in which year".</small></div><div class="r"><span class="own j">J</span><span class="metric">Records</span></div></li>
-    <li class="d"><div class="id">D5</div><div class="t"><b>Dashboard v0</b>One page: scoreboard tiles, lines, decision log, deliverables, updated by hand before each call.<small>Done when it is live before the first Tuesday call.</small></div><div class="r"><span class="own j">J</span><span class="metric">Everything</span></div></li>
-  </ul>
+  <div class="gl">Week one <span>27 October – 2 November</span></div>
+  <details class="d"><summary><span class="id">D1</span><span class="t">Seat live<small>Invoice, Tuesday call, Composio triage</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>November invoice, Tuesday 11:00 in both diaries, Composio on Julien's machine with all seven inboxes into one daily triage.</p><p><b>Done when</b> the first triage lands on a Monday morning. <b>Number:</b> inbox hours a day.</p></div></details>
+  <details class="d"><summary><span class="id">D2</span><span class="t">hallo@ Mushroom automated<small>Auto-replies, forwards only what matters</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Trained on the last months of mail, auto-replies to the recurring types, forwards only clients and unknowns.</p><p><b>Done when</b> under five hallo@ mails a week reach Julien. <b>Number:</b> mails reaching Julien.</p></div></details>
+  <details class="d"><summary><span class="id">D3</span><span class="t">Mushroom agreement signed<small>Four-hour cap, overage invoiced</small></span><span class="r"><span class="own j">J</span><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Version 3 with the retainer cap set to four hours, the notification clause enforced from November, and the overage invoiced at R1,750 an hour, including the ~R60k outstanding.</p><p><b>Done when</b> Willem has signed and the invoice is out. <b>Number:</b> Mushroom hours a month.</p></div></details>
+  <details class="d"><summary><span class="id">D4</span><span class="t">Project base<small>One database, including the Big Concerts archive</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>The repo plus everything Julien has shared, and the Big Concerts email archive on his laptop indexed into one database.</p><p><b>Done when</b> it answers "what did we offer X in which year". <b>Number:</b> records.</p></div></details>
+  <details class="d"><summary><span class="id">D5</span><span class="t">Dashboard v0<small>This page, updated before each call</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>One page: scoreboard tiles, lines, decision log, deliverables, updated by hand before each call.</p><p><b>Done when</b> it is live before the first Tuesday call.</p></div></details>
 
-  <div class="phase"><h3>Weeks two to four</h3><span>November</span></div>
-  <ul class="dl">
-    <li class="d"><div class="id">D6</div><div class="t"><b>Merch skills</b>Forecasting on the UB40 input model: attendance, spend per head, mix, size curve, unit cost. Settlement on the Dave format: Yoco report in, closing stock and P&amp;L out.<small>Done when both match a past tour.</small></div><div class="r"><span class="own j">J</span><span class="own">Youngsters</span><span class="metric">Hours per forecast, per settlement</span></div></li>
-    <li class="d"><div class="id">D7</div><div class="t"><b>J. Cole merch</b>Forecast via the skill, production funded, POs placed, on-sale and click-and-collect plan, add-on products tested.<small>Done when stock has landed and staff are booked.</small></div><div class="r"><span class="own">JvW</span><span class="metric">Gross, spend/head, profit, Merchhaus take, hours</span></div></li>
-    <li class="d"><div class="id">D8</div><div class="t"><b>Mushroom sales agent</b>Claude and Apollo, marketing and events decision-makers at SA companies over R50m, personalised direct outreach, replies qualified, running from his own bot. Doesn't duplicate the agency's LinkedIn ads; its replies feed their lead tracker.<small>Done when the first 100 are out and replies flow.</small></div><div class="r"><span class="own j">J</span><span class="own">JvW</span><span class="metric">Qualified replies a week</span></div></li>
-    <li class="d"><div class="id">D9</div><div class="t"><b>Local-artist outreach agent</b>Chartmetric top 400 SA acts, scored, first outreach, 20 who want merch now.<small>Done at 20 qualified.</small></div><div class="r"><span class="own j">J</span><span class="metric">Qualified artists</span></div></li>
-    <li class="d"><div class="id">D10</div><div class="t"><b>Revive the Republic one-pager</b>Name, concept, venue shortlist, date for #1, partner terms, budget inside the cap, streaming plan with Mushroom, sponsor pack.<small>Done when the date is set, the venue held and the pack is with three brands.</small></div><div class="r"><span class="own">JvW</span><span class="own j">J</span><span class="metric">Date, budget, sponsor conversations</span></div></li>
-    <li class="d"><div class="id">D11</div><div class="t"><b>Fastgate v1 scope</b>WhatsApp purchase and delivery, opt-in fan database, event #1 only. Partner agreement checked against the trust and surety rule. Launch date.<small>Done when scope and date are in writing.</small></div><div class="r"><span class="own">JvW</span><span class="own j">J</span><span class="metric">Launch date, fans</span></div></li>
-    <li class="d"><div class="id">D12</div><div class="t"><b>International profit hit-list</b>Price database from the archive, Chartmetric and live offer responses. An agent sends enrichment offers. Shortlist 20 where price fits a co-promoted model inside the ceiling.<small>Done at 20 acts with a price and a profit estimate.</small></div><div class="r"><span class="own j">J</span><span class="metric">Acts with price data</span></div></li>
-  </ul>
+  <div class="gl">Weeks two to four <span>November</span></div>
+  <details class="d"><summary><span class="id">D6</span><span class="t">Merch skills<small>Forecast in, settlement out</small></span><span class="r"><span class="own j">J</span><span class="own">Youngsters</span><i class="chev"></i></span></summary><div class="body"><p>Forecasting on the UB40 input model: attendance, spend per head, mix, size curve, unit cost. Settlement on the Dave format: Yoco report in, closing stock and P&amp;L out.</p><p><b>Done when</b> both match a past tour. <b>Number:</b> hours per forecast, per settlement.</p></div></details>
+  <details class="d"><summary><span class="id">D7</span><span class="t">J. Cole merch<small>Forecast, fund, order, on-sale</small></span><span class="r"><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Forecast via the skill, production funded, POs placed, on-sale and click-and-collect plan, add-on products tested.</p><p><b>Done when</b> stock has landed and staff are booked. <b>Number:</b> gross, spend per head, profit, Merchhaus take, hours.</p></div></details>
+  <details class="d"><summary><span class="id">D8</span><span class="t">Mushroom sales agent<small>Direct outreach, 20% on what lands</small></span><span class="r"><span class="own j">J</span><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Claude and Apollo, marketing and events decision-makers at SA companies over R50m, personalised direct outreach, replies qualified, running from Julien's own bot. Doesn't duplicate the agency's LinkedIn ads; its replies feed their lead tracker.</p><p><b>Done when</b> the first 100 are out and replies flow. <b>Number:</b> qualified replies a week.</p></div></details>
+  <details class="d"><summary><span class="id">D9</span><span class="t">Local-artist outreach agent<small>Top 400 to 20 who want merch</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Chartmetric top 400 SA acts, scored, first outreach, 20 who want merch now.</p><p><b>Done at</b> 20 qualified. <b>Number:</b> qualified artists.</p></div></details>
+  <details class="d"><summary><span class="id">D10</span><span class="t">Revive the Republic one-pager<small>Name, venue, date, partner, budget, sponsors</small></span><span class="r"><span class="own">JvW</span><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Name, concept, venue shortlist, date for #1, partner terms, budget inside the cap, streaming plan with Mushroom, sponsor pack.</p><p><b>Done when</b> the date is set, the venue held and the pack is with three brands. <b>Number:</b> date, budget, sponsor conversations.</p></div></details>
+  <details class="d"><summary><span class="id">D11</span><span class="t">Fastgate v1 scope<small>WhatsApp tickets, event #1 only</small></span><span class="r"><span class="own">JvW</span><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>WhatsApp purchase and delivery, opt-in fan database, event #1 only. Partner agreement checked against the trust and surety rule. Launch date.</p><p><b>Done when</b> scope and date are in writing. <b>Number:</b> launch date, fans.</p></div></details>
+  <details class="d"><summary><span class="id">D12</span><span class="t">International profit hit-list<small>20 acts with a price and a profit estimate</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Price database from the archive, Chartmetric and live offer responses. An agent sends enrichment offers. Shortlist 20 where price fits a co-promoted model inside the ceiling.</p><p><b>Done at</b> 20 acts with a price and a profit estimate. <b>Number:</b> acts with price data.</p></div></details>
 
-  <div class="phase"><h3>Weeks five to twelve</h3><span>December – January</span></div>
-  <ul class="dl">
-    <li class="d"><div class="id">D13</div><div class="t"><b>J. Cole delivered</b>Settled via the skill within 48 hours. Julien off site by 23:00.<small>Done when the settlement is sent.</small></div><div class="r"><span class="own">JvW</span><span class="metric">As D7</span></div></li>
-    <li class="d"><div class="id">D14</div><div class="t"><b>Local-artist merch platform MVP</b>Three to five acts live, stock-light or print-on-demand, 25% artist royalty, online and TikTok shop. Virgin Music intro if he says yes.<small>Done at the first sale by a fan of a local act.</small></div><div class="r"><span class="own j">J</span><span class="own">JvW</span><span class="metric">Acts live, orders, revenue</span></div></li>
-    <li class="d"><div class="id">D15</div><div class="t"><b>Revive the Republic #1</b>Late January, or February if J. Cole eats January. 500 tickets, streamed, merch and bar, one brand partner.<small>Done when the show happens.</small></div><div class="r"><span class="own">JvW</span><span class="own j">J</span><span class="metric">Tickets, gross, views, sponsor rand, hours, enjoyment</span></div></li>
-    <li class="d"><div class="id">D16</div><div class="t"><b>Website repositioning</b>Music Republik as platform and agency, Merchhaus as artist merch partner, corporate apparel gone.<small>Done when live.</small></div><div class="r"><span class="own j">J</span><span class="metric">Inbound enquiries</span></div></li>
-    <li class="d"><div class="id">D17</div><div class="t"><b>90-day review</b>Against the life design: take-home run-rate, hours, evenings off, cash, capital at risk, enjoyment. Plan v0.2.<small>Done when reviewed on the call.</small></div><div class="r"><span class="own j">J</span><span class="own">JvW</span><span class="metric">All tiles</span></div></li>
-  </ul>
+  <div class="gl">Weeks five to twelve <span>December – January</span></div>
+  <details class="d"><summary><span class="id">D13</span><span class="t">J. Cole delivered<small>Settled within 48 hours</small></span><span class="r"><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Settled via the skill within 48 hours. Julien off site by 23:00.</p><p><b>Done when</b> the settlement is sent. <b>Number:</b> as D7.</p></div></details>
+  <details class="d"><summary><span class="id">D14</span><span class="t">Local-artist merch platform MVP<small>3–5 acts live, 25% royalty</small></span><span class="r"><span class="own j">J</span><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Three to five acts live, stock-light or print-on-demand, 25% artist royalty, online and TikTok shop. Virgin Music intro if Julien says yes.</p><p><b>Done at</b> the first sale by a fan of a local act. <b>Number:</b> acts live, orders, revenue.</p></div></details>
+  <details class="d"><summary><span class="id">D15</span><span class="t">Revive the Republic #1<small>500 tickets, streamed, one brand</small></span><span class="r"><span class="own">JvW</span><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Late January, or February if J. Cole eats January. 500 tickets, streamed, merch and bar, one brand partner.</p><p><b>Done when</b> the show happens. <b>Number:</b> tickets, gross, views, sponsor rand, hours, enjoyment.</p></div></details>
+  <details class="d"><summary><span class="id">D16</span><span class="t">Website repositioning<small>Platform and agency, corporate apparel gone</small></span><span class="r"><span class="own j">J</span><i class="chev"></i></span></summary><div class="body"><p>Music Republik as platform and agency, Merchhaus as artist merch partner, corporate apparel gone.</p><p><b>Done when</b> live. <b>Number:</b> inbound enquiries.</p></div></details>
+  <details class="d"><summary><span class="id">D17</span><span class="t">90-day review<small>Against the scoreboard, plan v0.2</small></span><span class="r"><span class="own j">J</span><span class="own">JvW</span><i class="chev"></i></span></summary><div class="body"><p>Against the life design: take-home run-rate, hours, evenings off, cash, capital at risk, enjoyment. Plan v0.2.</p><p><b>Done when</b> reviewed on the call. <b>Number:</b> all tiles.</p></div></details>
 </div></section>
 
 <section id="dash"><div class="wrap">
-  <div class="sh"><div class="n">06</div><div><h2>The dashboard this becomes</h2><p>This page is v0. Each section above is already a panel; the numbers start flowing in as the sources connect.</p></div></div>
-  <div class="dash">
-    <div class="panel"><div class="l">Panels</div><ul>
-      <li><b>Scoreboard.</b> Life-design tiles, target versus actual.</li>
-      <li><b>Money.</b> Cash, runway, committed, capital at risk, pipeline.</li>
-      <li><b>Lines.</b> One card per revenue line: status, 12-month revenue and profit, hours a week, enjoyment, bottleneck, next deliverable.</li>
-      <li><b>Decision log.</b> Every yes and no, with the gates it passed.</li>
-      <li><b>Deliverables.</b> Owner, due, status, number.</li>
-      <li><b>Weekly check-ins.</b> Hours, evenings off, enjoyment, what moved.</li>
-    </ul></div>
-    <div class="panel"><div class="l">Sources, in connection order</div><ul>
-      <li>Weekly call inputs: hours, evenings, enjoyment.</li>
-      <li>Accounting for Music Republik and Merchhaus, monthly.</li>
-      <li>Yoco and the shop: merch sales per event.</li>
-      <li>Chartmetric: artist data.</li>
-      <li>Composio inbox stats: mail load.</li>
-      <li>Fastgate: tickets and the fan database.</li>
-    </ul></div>
-  </div>
+  <div class="sh"><div class="n">06</div><div><h2>The dashboard this becomes</h2><p>This page is v0. Each section above is already a panel.</p></div></div>
   <div class="build">
     <div><b>v0 · November</b>This page, updated by hand before each call.</div>
-    <div><b>v1 · December</b>A page with its own database so Julien updates his tiles himself.</div>
+    <div><b>v1 · December</b>Its own database, so Julien updates his tiles himself.</div>
     <div><b>v2 · Q1 2027</b>Live connectors. Numbers arrive on their own.</div>
   </div>
+  <details><summary>Panels<span class="r">6 <i class="chev"></i></span></summary><div class="body"><ul><li><b>Scoreboard.</b> Life-design tiles, target versus actual.</li><li><b>Money.</b> Cash, runway, committed, capital at risk, pipeline.</li><li><b>Lines.</b> One card per revenue line: status, 12-month revenue and profit, hours a week, enjoyment, bottleneck, next deliverable.</li><li><b>Decision log.</b> Every yes and no, with the gates it passed.</li><li><b>Deliverables.</b> Owner, due, status, number.</li><li><b>Weekly check-ins.</b> Hours, evenings off, enjoyment, what moved.</li></ul></div></details>
+  <details><summary>Data sources, in connection order<span class="r">6 <i class="chev"></i></span></summary><div class="body"><ul><li>Weekly call inputs: hours, evenings, enjoyment.</li><li>Accounting for Music Republik and Merchhaus, monthly.</li><li>Yoco and the shop: merch sales per event.</li><li>Chartmetric: artist data.</li><li>Composio inbox stats: mail load.</li><li>Fastgate: tickets and the fan database.</li></ul></div></details>
 </div></section>
-
 
 </main>
 
@@ -391,6 +316,9 @@ footer{margin-top:72px;border-top:1px solid var(--rule);padding:22px 0 40px;font
   var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
   function spy(){var y=window.scrollY+90,i=0;secs.forEach(function(s,k){if(s&&s.offsetTop<=y)i=k});links.forEach(function(a,k){a.classList.toggle('on',k===i)})}
   window.addEventListener('scroll',spy,{passive:true});spy();
+  var btn=document.getElementById('toggleAll'),all=[].slice.call(document.querySelectorAll('details')),open=false;
+  btn.addEventListener('click',function(){open=!open;all.forEach(function(d){d.open=open});btn.textContent=open?'Collapse all':'Expand all'});
+  window.addEventListener('beforeprint',function(){all.forEach(function(d){d.open=true})});
 })();
 </script>
 </body>
