@@ -156,13 +156,3 @@ Each has an owner (J = Johannes, JvW = Julien), a done-definition and the dashbo
 **Sources, in the order they get connected:** weekly call inputs (hours, evenings, enjoyment) → accounting (Music Republik and Merchhaus, monthly) → Yoco and the shop (merch sales per event) → Chartmetric (artist data) → Composio inbox stats (mail load) → Fastgate (tickets, fan database).
 
 **Build path:** v0 in November, one page updated by hand before each call. v1 in December, a shared page with its own database so Julien can update his tiles himself. v2 in Q1 2027, live connectors.
-
-## 7. Questions for the review
-
-1. Which 12-month take-home number goes on the dashboard: R1.6m or R2m?
-2. Risk ceiling: R1.5m in play at any one time, or R1.5m per event with no annual cap?
-3. Revive #1: January or February, and is R150k the right cap?
-4. Fastgate: what has Julien put in, what's owed, who owns the IP, and does the partner agreement go near the holdco?
-5. International offers: tell Julien now that they go data-only, or let the agent run alongside for a month and show him the numbers?
-6. Mushroom: 4-hour cap with profit share, or exit the retainer and go contract-only?
-7. The Big Concerts relationship: who raises the in-house venue merch position, and when?
