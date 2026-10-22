@@ -30,7 +30,7 @@ def founders_cost(m, plan):
     return 0 if m <= 6 else (40000 if m <= 18 else 70000)   # 'full'
 
 def run(name, split='rec', onb_mult=1.0, act_mult=1.0, opm_mult=1.0, anchor=0.0, base_up=0.0,
-        plan='lean', founder_mult=1.0, mvp=650000):
+        plan='lean', founder_mult=1.0, mvp=650000, pod_only=False):
     s = SCEN[name]; cum=0.0; cash=0.0; low=0.0; lowm=0
     stage='A'; hub=False; dtf=False; rows=[]
     for m in range(1,37):
@@ -66,9 +66,9 @@ def run(name, split='rec', onb_mult=1.0, act_mult=1.0, opm_mult=1.0, anchor=0.0,
         if dtf: fx += DTF_FX
         eb = gp - var - fx
         capex = 0
-        if not hub and orders >= (HUB_T if plan=='lean' else 900):
+        if not pod_only and not hub and orders >= (HUB_T if plan=='lean' else 900):
             hub=True; stage='B'; capex += (HUB_CAP if plan=='lean' else 120000)
-        if not dtf and orders >= DTF_T:
+        if not pod_only and not dtf and orders >= DTF_T:
             dtf=True; stage='C'; capex += DTF_CAP
         cash += eb - capex
         if cash < low: low, lowm = cash, m
@@ -110,6 +110,9 @@ if __name__ == '__main__':
      ('Three anchor artists adding 300 orders/month from M10', dict(anchor=300)),
      ('Base price +R30 ex VAT (creator earns R30 less)', dict(base_up=30)),
      ('MVP build R400k instead of R650k', dict(mvp=400000)),
+     ('Pure POD: outsourced printing throughout, no blank stock', dict(pod_only=True)),
+     ('Pure POD with 75/25 split', dict(pod_only=True, split='75/25')),
+     ('Pure POD with 75/25, onboarding -40% and activity -25%', dict(pod_only=True, split='75/25', onb_mult=0.6, act_mult=0.75)),
     ]
     for label, kw in cases:
         name = 'Base'
